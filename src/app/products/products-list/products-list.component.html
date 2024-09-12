@@ -1,0 +1,36 @@
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline" (ngSubmit)="getProductById()">
+    <input
+      class="form-control mr-sm-2"
+      type="number"
+      [(ngModel)]="searchId"
+      name="searchId"
+      placeholder="Qué ID buscas mi rey"
+      aria-label="Search"
+      required
+    >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
+
+<br><br>
+
+<div class="container">
+  <div class="row product-container">
+    <div *ngFor="let product of productList" class="col-md-2 mb-4">
+      <div class="product-card">
+        <img [src]="product.image" alt="{{ product.title }}" class="product-image">
+        <div class="product-details">
+          <h3 class="product-title">{{ product.title }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          <p class="product-price">Precio: {{ product.price | currency }}</p>
+          <button class="btn btn-primary" (click)="onAddToCart(product)">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-grid gap-2 mt-4">
+  <button class="btn btn-primary" (click)="onViewCart()">CARRITO</button>
+</div>

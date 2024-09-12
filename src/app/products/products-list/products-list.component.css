@@ -1,0 +1,90 @@
+/* Contenedor para las tarjetas de producto */
+.product-container {
+  gap: 2px; /* Espaciado entre las tarjetas */
+}
+
+/* Estilo para cada tarjeta de producto */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Aumenta el tamaño en un 5% al pasar el ratón */
+}
+
+/* Estilo para la imagen del producto */
+.product-image {
+  width: 80%;
+  align-items: center;
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+/* Estilo para los detalles del producto */
+.product-details {
+  padding: 12px; /* Ajusta el relleno alrededor de los detalles */
+}
+
+/* Estilo para el título del producto */
+.product-title {
+  font-size: 1rem; /* Ajusta el tamaño del texto */
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Estilo para la descripción del producto */
+.product-description {
+  font-size: 0.875rem; /* Ajusta el tamaño del texto */
+  margin-bottom: 6px;
+}
+
+/* Estilo para el precio del producto */
+.product-price {
+  font-size: 0.875rem; /* Ajusta el tamaño del texto */
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Estilo para el botón de agregar al carrito */
+.product-card .btn-primary {
+  width: 100%;
+  font-size: 0.875rem; /* Ajusta el tamaño del texto */
+}
+
+/* Estilo del botón */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+
+
+
+/* Estilo del botón */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Estilo del botón dentro del cuerpo de la tarjeta */
+.card-body .btn {
+  margin-top: 1rem;
+  align-self: center; /* Centra el botón horizontalmente */
+  width: 100%; /* El botón ocupa todo el ancho */
+}

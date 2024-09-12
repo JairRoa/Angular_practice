@@ -1,0 +1,34 @@
+<h1>Carrito de Compras</h1>
+
+<h2>En este momento tu compra tiene:</h2>
+<br><br>
+
+<!-- Mostrar productos -->
+<div *ngIf="cartItems.length > 0; else emptyCart">
+  <div *ngFor="let product of cartItems" class="cart-item">
+    <div class="cart-item-details">
+      <h3>{{ product.title }}</h3> <!-- Updated to product.title -->
+      <p>{{ product.description }}</p>
+      <p>Precio: {{ product.price | currency }}</p>
+      <!-- Botón para eliminar del carrito -->
+      <button class="btn btn-danger" (click)="removeFromCart(product)">Eliminar</button>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<!-- carrito vacío -->
+<ng-template #emptyCart>
+  <p>No hay productos en el carrito.</p>
+</ng-template>
+
+<!-- limpiar carrito -->
+<button class="btn btn-danger" (click)="clearCart()">Limpiar Carrito</button>
+
+<!-- volver al inicio -->
+<button class="btn btn-primary" (click)="goToHome()">Volver al Inicio</button>
+
+<!-- ir a pagar -->
+<button class="btn btn-success" (click)="goPaid()">Ir a pagar</button>

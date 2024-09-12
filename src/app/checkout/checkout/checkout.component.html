@@ -1,0 +1,22 @@
+<h1>Pago</h1>
+
+<h2>Artículos por pagar:</h2>
+<br><br>
+
+<!-- Mostrar productos -->
+<div *ngIf="cartItems.length > 0; else emptyCart">
+  <div *ngFor="let product of cartItems" class="cart-item">
+    <div class="cart-item-details">
+      <h3>{{ product.title }}</h3> <!-- Updated to product.title -->
+      <p>Precio: {{ product.price | currency }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Mostrar mensaje si el carrito está vacío -->
+<ng-template #emptyCart>
+  <p>No hay productos en el carrito.</p>
+</ng-template>
+
+<!-- Volver al inicio -->
+<button class="btn btn-primary" (click)="goToHome()">Agregar más artículos</button>
